@@ -42,4 +42,5 @@ TEST_F(NginxConfigStringTest, MissingSemiColonTest) {
 TEST_F(NginxConfigStringTest, UnbalancedCurlyBraces) {
 	EXPECT_FALSE(ParseString("server { "));
 	EXPECT_FALSE(ParseString("server { listen 80;"));
+	EXPECT_FALSE(ParseString("server listen 80; }"));
 }
